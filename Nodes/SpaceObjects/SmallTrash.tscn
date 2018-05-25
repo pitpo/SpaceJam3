@@ -55,7 +55,7 @@ custom_solver_bias = 0.0
 radius = 14.9067
 height = 24.7577
 
-[node name="SmallTrash" type="KinematicBody2D" index="0" groups=[
+[node name="SmallTrash" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
