@@ -17,6 +17,8 @@ func _process(delta):
 			
 			if collision and collision.collider.is_in_group("player"):
 				collision.collider.add_object(self)
+				set_collision_layer_bit(0, false)
+				set_collision_mask_bit(0, false)
 		
 		else:
 			Util.player.gravitate(self)
