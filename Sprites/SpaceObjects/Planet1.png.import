@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Trash1.png-b504e1de987eefd9990b26c1daecce7f.stex"
+path="res://.import/Planet1.png-0bcacb00e20a233510cb93726ba60ad5.stex"
 
 [deps]
 
-source_file="res://Sprites/Trash1.png"
-source_md5="d45705565220a73ab605978b56d535b7"
+source_file="res://Sprites/SpaceObjects/Planet1.png"
+source_md5="de19758a40a042c689c0d65bf16647cb"
 
-dest_files=[ "res://.import/Trash1.png-b504e1de987eefd9990b26c1daecce7f.stex" ]
-dest_md5="aef7f330ba3034354ca7bddf3a6b3348"
+dest_files=[ "res://.import/Planet1.png-0bcacb00e20a233510cb93726ba60ad5.stex" ]
+dest_md5="cb626e8027c0f76eb996087c2897023a"
 
 [params]
 

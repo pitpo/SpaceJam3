@@ -1,5 +1,41 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Nodes/SpaceObjects/Planet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Player.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Sprite
+
+func _init():
+	Util.player = self"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
 
 [node name="Game" type="Node2D" index="0"]
+
+[node name="Planet" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 221.05, 126 )
+
+[node name="Kupogracz" type="Sprite" parent="." index="1"]
+
+position = Vector2( 488.378, 413.011 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Kupogracz" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kupogracz/KinematicBody2D" index="0"]
+
+shape = SubResource( 2 )
 
 
