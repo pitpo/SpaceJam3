@@ -13,7 +13,13 @@ func _process(delta):
 		motion += gravity
 		
 		var collision = move_and_collide(motion)
-		if collision: print(collision.collider.name)
 		
 		if collision and collision.collider.is_in_group("player"):
+#			print(name, " ", collision.collider.name)
 			collision.collider.add_object(self)
+			add_to_group("player")
+
+func add_object(object):
+	object.merged = true
+	object.get_parent().remove_child(object)
+	add_child(object)

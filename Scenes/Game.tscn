@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Nodes/SpaceObjects/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/SpaceObjects/Trash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Background.png" type="Texture" id=4]
 
 [node name="Game" type="Node2D"]
 
@@ -10,5 +12,38 @@
 position = Vector2( 221.05, 126 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="Trash" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 683.416, 335.031 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 3840, 2160 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3840, 2160 )
+_sections_unfolded = [ "Region", "Transform" ]
 
 
