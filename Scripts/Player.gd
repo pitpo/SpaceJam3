@@ -12,7 +12,7 @@ func _ready():
 	var pos = $"../StartingPlanet".position
 	# adjust Y position to spawn at the top of the planet
 	pos.y -= $"../StartingPlanet/Sprite".texture.get_width() * $"../StartingPlanet".scale.y / 2
-	pos.y -= 80
+	pos.y -= 160
 	position = pos
 	
 func _process(delta):
@@ -50,14 +50,22 @@ func _process(delta):
 
 func gravitate(object):
 	var dist = object.position - position
-	var gravity = dist.normalized() * object.mass * 0.01 / dist.length()
+	var gravity = dist.normalized() * object.mass / dist.length() * 100
 	
 	var collision = move_and_collide(gravity)
 	
 	if collision and collision.collider.is_in_group("space_object"):
-		print("ded")
+		print(collision.collider.name)
 
 func add_object(object):
+	var gp = object.global_position
+	var gr = object.global_rotation
 	object.merged = true
+	
 	object.get_parent().remove_child(object)
 	add_child(object)
+	object.add_to_group("player")
+	
+	object.global_position = gp
+	object.global_rotation = gr
+	Util.player.mass += mass

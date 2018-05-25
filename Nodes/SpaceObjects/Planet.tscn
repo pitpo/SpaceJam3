@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 32.0
 
-[node name="Planet" type="KinematicBody2D" groups=[
+[node name="Planet" type="KinematicBody2D" index="0" groups=[
 "space_object",
 ]]
 
@@ -18,7 +18,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "collision" ]
-mass = 3
+mass = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
