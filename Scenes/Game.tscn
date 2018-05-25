@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Nodes/SpaceObjects/Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/SpaceObjects/Trash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Background.png" type="Texture" id=4]
+[ext_resource path="res://Nodes/SpaceObjects/StartingPlanet.tscn" type="PackedScene" id=5]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 [node name="Planet" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -19,6 +20,7 @@ position = Vector2( 683.416, 335.031 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -45,5 +47,9 @@ texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3840, 2160 )
 _sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StartingPlanet" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 533.524, -129.174 )
 
 

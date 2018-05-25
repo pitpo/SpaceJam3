@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	if !merged:
-		if Util.player.MASS > mass:
+		if true:#Util.player.MASS > mass:
 			var gravity = (Util.player.position - position).normalized()
 			motion += gravity
 			

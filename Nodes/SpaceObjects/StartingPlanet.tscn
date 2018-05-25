@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/StartingPlanet.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/SpaceObjects/Planet1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpaceObjects/Planet1.png" type="Texture" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 32.0
@@ -13,7 +12,7 @@ radius = 32.0
 custom_solver_bias = 0.0
 radius = 38.6327
 
-[node name="Planet" type="KinematicBody2D" index="0" groups=[
+[node name="StartingPlanet" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
@@ -22,17 +21,16 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Shape" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
