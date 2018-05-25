@@ -10,7 +10,7 @@
 
 [node name="Planet" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 221.05, 126 )
+position = Vector2( -236.222, -384.586 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 

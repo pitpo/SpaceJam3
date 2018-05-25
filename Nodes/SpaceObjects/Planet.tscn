@@ -18,7 +18,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "collision" ]
-mass = 1
+mass = 3
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

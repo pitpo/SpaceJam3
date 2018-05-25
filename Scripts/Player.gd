@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int) var MASS
+var mass = 2
 export(int) var SPEED # will be calculted dynamically from mass in the future
 var velocity = Vector2()
 
@@ -45,8 +45,17 @@ func _process(delta):
 	if velocity.length() > 0:
 		curVelocity = curVelocity.normalized() * SPEED
 	
-	rotation = velocity.angle()
+	if velocity.length_squared() > 0: rotation = velocity.angle()
 	move_and_slide(curVelocity * delta*50)
+
+func gravitate(object):
+	var dist = object.position - position
+	var gravity = dist.normalized() * object.mass * 0.01 / dist.length()
+	
+	var collision = move_and_collide(gravity)
+	
+	if collision and collision.collider.is_in_group("space_object"):
+		print("ded")
 
 func add_object(object):
 	object.merged = true
