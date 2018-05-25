@@ -11,14 +11,8 @@ config_version=3
 [application]
 
 config/name="SpacjeJam3"
-run/main_scene="res://Nodes/Player.tscn"
+run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/width=1920
-window/size/height=1080
-window/size/fullscreen=true
 
 [rendering]
 
