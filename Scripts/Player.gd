@@ -42,4 +42,8 @@ func _process(delta):
 		curVelocity = curVelocity.normalized() * SPEED
 	
 	position += curVelocity * delta
-	
+
+func add_object(object):
+	object.merged = true
+	object.get_parent().remove_child(object)
+	add_child(object)
