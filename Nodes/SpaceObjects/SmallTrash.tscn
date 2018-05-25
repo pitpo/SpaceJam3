@@ -55,7 +55,7 @@ custom_solver_bias = 0.0
 radius = 14.9067
 height = 24.7577
 
-[node name="SmallTrash" type="KinematicBody2D" index="0" groups=[
+[node name="SmallTrash" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
@@ -65,7 +65,7 @@ collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
-mass = 1
+mass = 70
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

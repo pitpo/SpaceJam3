@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var mass = 2
+var mass = 100
 export(int) var SPEED # will be calculted dynamically from mass in the future
 var velocity = Vector2()
 
@@ -48,9 +48,12 @@ func _process(delta):
 	if velocity.length_squared() > 0: rotation = velocity.angle()
 	move_and_slide(curVelocity * delta*50)
 
+const MAX_GRAVITY = 2
+
 func gravitate(object):
 	var dist = object.position - position
-	var gravity = dist.normalized() * object.mass / dist.length() * 100
+	var gravity = dist.normalized() * object.mass / dist.length() * 10
+	if gravity.length() > MAX_GRAVITY: gravity = gravity.normalized() * MAX_GRAVITY
 	
 	var collision = move_and_collide(gravity)
 	
