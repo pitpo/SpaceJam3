@@ -8,11 +8,15 @@ func _init():
 	Util.player = self
 
 func _ready():
-	# spawn next to a planer (earth? XD), orbitting around it
-	pass
+	# spawn next to a planet (earth? XD), orbitting around it
+	var pos = $"../StartingPlanet".position
+	# adjust Y position to spawn at the top of the planet
+	pos.y -= $"../StartingPlanet/Sprite".texture.get_width() * $"../StartingPlanet".scale.y / 2
+	pos.y -= 80
+	position = pos
 	
 func _process(delta):
-	
+
 	# MOVEMENT
 	# use controls to alter the vector
 	
@@ -41,7 +45,8 @@ func _process(delta):
 	if velocity.length() > 0:
 		curVelocity = curVelocity.normalized() * SPEED
 	
-	position += curVelocity * delta
+	rotation = velocity.angle()
+	move_and_slide(curVelocity * delta*50)
 
 func add_object(object):
 	object.merged = true

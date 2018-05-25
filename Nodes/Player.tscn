@@ -36,6 +36,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
 MASS = null
 SPEED = 300
 
@@ -69,10 +70,10 @@ _sections_unfolded = [ "Drag Margin" ]
 
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 2 )
+flip_h = true
 vframes = 17
 hframes = 2
-frame = 18
-_sections_unfolded = [ "Animation", "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
@@ -86,12 +87,13 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -43.5485, -2.35869 )
+position = Vector2( 43.6302, -2.62195 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -43.5485, -2.35869 )
+position = Vector2( 43.6302, -2.62195 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
