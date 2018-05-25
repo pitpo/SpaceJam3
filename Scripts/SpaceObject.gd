@@ -9,17 +9,22 @@ func _ready():
 
 func _process(delta):
 	if !merged:
-		var gravity = (Util.player.position - position).normalized()
-		motion += gravity
+		if Util.player.MASS > mass:
+			var gravity = (Util.player.position - position).normalized()
+			motion += gravity
+			
+			var collision = move_and_collide(motion)
+			
+			if collision and collision.collider.is_in_group("player"):
+				collision.collider.add_object(self)
 		
-		var collision = move_and_collide(motion)
-		
-		if collision and collision.collider.is_in_group("player"):
-#			print(name, " ", collision.collider.name)
-			collision.collider.add_object(self)
-			add_to_group("player")
+		else:
+			Util.player.gravitate(self)
 
 func add_object(object):
+	var gp = object.global_position
 	object.merged = true
 	object.get_parent().remove_child(object)
 	add_child(object)
+	object.add_to_group("player")
+	object.global_position = gp
