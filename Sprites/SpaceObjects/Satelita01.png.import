@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex"
+path="res://.import/Satelita01.png-524b546be837aba1e3781620013fea23.stex"
 
 [deps]
 
-source_file="res://Sprites/PlayerLight.png"
-source_md5="39baade197747ca44d7b2a1327ceeaf5"
+source_file="res://Sprites/SpaceObjects/Satelita01.png"
+source_md5="d90c7ffdfa3252726e3dd49f00ba50a9"
 
-dest_files=[ "res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex" ]
-dest_md5="2696bef82abbc8b20e2b4fd2096df19d"
+dest_files=[ "res://.import/Satelita01.png-524b546be837aba1e3781620013fea23.stex" ]
+dest_md5="4994efb3a1d70df036b532bea26ea9cc"
 
 [params]
 

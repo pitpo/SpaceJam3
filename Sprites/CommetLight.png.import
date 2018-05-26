@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex"
+path="res://.import/CommetLight.png-ba3cab12bba2268be68ebb592a7a1191.stex"
 
 [deps]
 
-source_file="res://Sprites/PlayerLight.png"
-source_md5="39baade197747ca44d7b2a1327ceeaf5"
+source_file="res://Sprites/CommetLight.png"
+source_md5="4542d46e38d7a59451e8de6757f65125"
 
-dest_files=[ "res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex" ]
-dest_md5="2696bef82abbc8b20e2b4fd2096df19d"
+dest_files=[ "res://.import/CommetLight.png-ba3cab12bba2268be68ebb592a7a1191.stex" ]
+dest_md5="cc0ba240bae2b16f0861b1e64d12450e"
 
 [params]
 

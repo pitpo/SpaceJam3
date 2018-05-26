@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex"
+path="res://.import/SpaceCloud04.png-946050077eb87fdf5a943e4fb76698e3.stex"
 
 [deps]
 
-source_file="res://Sprites/PlayerLight.png"
-source_md5="39baade197747ca44d7b2a1327ceeaf5"
+source_file="res://Sprites/Background/SpaceCloud04.png"
+source_md5="9e5b3a86c4ca2191693a5db982d5a259"
 
-dest_files=[ "res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex" ]
-dest_md5="2696bef82abbc8b20e2b4fd2096df19d"
+dest_files=[ "res://.import/SpaceCloud04.png-946050077eb87fdf5a943e4fb76698e3.stex" ]
+dest_md5="50be2f9afda7ac3bc0340f89114495f9"
 
 [params]
 
