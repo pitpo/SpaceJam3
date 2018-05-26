@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Background/Background.png" type="Texture" id=2]
 [ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/SpaceObjects/Satellite1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Nodes/SpaceObjects/Saturn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/SpaceObjects/Uranus.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -54,6 +54,6 @@ position = Vector2( 1733.3, -578.095 )
 
 [node name="StartingPlanet" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 12695.4, -152.746 )
+position = Vector2( 5919.33, 1083.85 )
 
 

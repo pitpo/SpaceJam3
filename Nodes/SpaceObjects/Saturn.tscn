@@ -36,5 +36,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="RingGenerator" type="Node" parent="." index="2"]
 
 script = ExtResource( 3 )
+size = 10000
+number = 300
 
 

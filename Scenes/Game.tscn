@@ -52,6 +52,7 @@ _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 position = Vector2( 533.524, -129.174 )
 mass = 1000
+wait = 10
 
 [node name="SmallTrash" parent="." index="4" instance=ExtResource( 3 )]
 

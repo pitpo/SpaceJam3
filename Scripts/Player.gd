@@ -56,6 +56,7 @@ func _process(delta):
 		camScale = 1
 	
 	var curScale = lerp($Camera2D.zoom.x, camScale, 0.01)
+	curScale = 10
 	$Camera2D.zoom = Vector2(curScale, curScale)
 
 func gravitate(object):
