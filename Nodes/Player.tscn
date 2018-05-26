@@ -76,12 +76,13 @@ tracks/2/keys = {
 "player",
 ]]
 
+z_index = 2
 input_pickable = true
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+_sections_unfolded = [ "Collision", "Pickable", "Z Index", "collision" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
