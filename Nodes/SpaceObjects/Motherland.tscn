@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/SpaceObject.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Planets/ExoPlanet02.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/SpriteSelector.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Planets/Motherland.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -26,11 +25,8 @@ rotate = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 0.917647, 1, 0.639216, 1 )
 texture = ExtResource( 2 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-set = "planets"
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

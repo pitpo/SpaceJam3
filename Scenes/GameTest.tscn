@@ -1,33 +1,43 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
-[ext_resource path="res://Nodes/SpaceObjects/Mars.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Nodes/SpaceObjects/SmallTrash.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/Background/Background.png" type="Texture" id=5]
-[ext_resource path="res://Nodes/SpaceObjects/Sun.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Nodes/SpaceObjects/Earth.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Nodes/SpaceObjects/Moon.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Nodes/SpaceObjects/Venus.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Nodes/SpaceObjects/Mercury.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Nodes/SpaceObjects/SmallTrash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/SpaceObjects/Shoe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/Background/Background.png" type="Texture" id=6]
+[ext_resource path="res://Nodes/SpaceObjects/Sun.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodes/SpaceObjects/Earth.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Nodes/SpaceObjects/Moon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Nodes/SpaceObjects/Satellite1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Nodes/SpaceObjects/Satellite2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Nodes/SpaceObjects/Motherland.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Nodes/SpaceObjects/Rocket.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Nodes/SpaceObjects/DeathStar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Nodes/SpaceObjects/Venus.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Nodes/SpaceObjects/Mercury.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Nodes/SpaceObjects/Mars.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Nodes/SpaceObjects/Jupiter.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Nodes/SpaceObjects/StartingPlanet.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Nodes/SpaceObjects/Saturn.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Nodes/SpaceObjects/Uranus.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Nodes/SpaceObjects/Neptune.tscn" type="PackedScene" id=22]
 
 [node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+SmallTrash = ExtResource( 2 )
+MediumTrash = ExtResource( 3 )
+Shoe = ExtResource( 4 )
 
-[node name="Mars" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 79068, 507.291 )
-rotate = 0
-
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
-
-[node name="Trash" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Trash" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 683.416, 335.031 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -52,40 +62,312 @@ _sections_unfolded = [ "Motion", "Transform" ]
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
 modulate = Color( 0.466667, 0.443137, 0.886275, 1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 38400, 38400 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="Clouds" type="Node2D" parent="." index="4"]
+[node name="Clouds" type="Node2D" parent="." index="3"]
 
-[node name="Sun" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Sun" parent="." index="4" groups=[
+"planet",
+] instance=ExtResource( 7 )]
 
+rotation = 0.122173
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Transform" ]
 rotate = 0.001
 
-[node name="Earth" parent="Sun" index="2" instance=ExtResource( 7 )]
+[node name="Earth" parent="Sun" index="2" groups=[
+"planet",
+] instance=ExtResource( 8 )]
 
 position = Vector2( 62501.1, 55.7031 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Transform" ]
 rotate = 0.05
 
-[node name="Moon" parent="Sun/Earth" index="2" instance=ExtResource( 8 )]
+[node name="Moon" parent="Sun/Earth" index="2" groups=[
+"planet",
+] instance=ExtResource( 9 )]
 
 position = Vector2( 185.445, -5685.3 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 rotate = 0
 
-[node name="Venus" parent="." index="6" instance=ExtResource( 9 )]
+[node name="Satellite1" parent="Sun/Earth" index="3" instance=ExtResource( 10 )]
 
-position = Vector2( 47758.8, 356.66 )
+position = Vector2( 1950.33, 417.909 )
 rotate = 0
 
-[node name="Mercury" parent="." index="7" instance=ExtResource( 10 )]
+[node name="Satellite2" parent="Sun/Earth" index="4" instance=ExtResource( 11 )]
 
-position = Vector2( 32086.7, -62.1201 )
+position = Vector2( -2218.83, 799.384 )
 rotate = 0
 
-[node name="StartingPlanet" parent="." index="8" instance=ExtResource( 8 )]
+[node name="Satellite3" parent="Sun/Earth" index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 88478, 439.596 )
+position = Vector2( 334.621, 1887.72 )
+rotation = 0.733038
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+rotate = 0.0
+
+[node name="Satellite4" parent="Sun/Earth" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( -1633.39, -1259.43 )
+rotation = 0.733038
+scale = Vector2( 1, 1 )
 rotate = 0
+
+[node name="MATECZKA ROSIJA" parent="Sun" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 19233.3, 32.3691 )
+scale = Vector2( 1, 1 )
+
+[node name="Rocket" parent="Sun/MATECZKA ROSIJA" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 933.646, 201.829 )
+rotate = -0.02
+
+[node name="Rocket2" parent="Sun/MATECZKA ROSIJA" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( -1106.99, 127.308 )
+rotation = 1.15192
+scale = Vector2( 1, 1 )
+_sections_unfolded = [ "Transform" ]
+rotate = 0.3
+
+[node name="DeathStar" parent="Sun" index="4" instance=ExtResource( 14 )]
+
+position = Vector2( 225953, 48716.2 )
+scale = Vector2( 1, 1 )
+
+[node name="Venus" parent="Sun" index="5" groups=[
+"planet",
+] instance=ExtResource( 15 )]
+
+position = Vector2( 46223.8, -12016.4 )
+rotation = -0.261799
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Transform" ]
+rotate = 0
+
+[node name="Mercury" parent="Sun" index="6" groups=[
+"planet",
+] instance=ExtResource( 16 )]
+
+position = Vector2( 17891.2, -26635.8 )
+rotation = -0.977384
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Transform" ]
+rotate = 0
+
+[node name="Mars" parent="Sun" index="7" instance=ExtResource( 17 )]
+
+position = Vector2( 27519.5, -74126.1 )
+rotation = -1.22173
+scale = Vector2( 1, 1 )
+rotate = 0
+
+[node name="Jupiter" parent="Sun" index="8" groups=[
+"planet",
+] instance=ExtResource( 18 )]
+
+position = Vector2( 96133.9, 34844.9 )
+rotation = 0.349066
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="JupiMun" parent="Sun/Jupiter" index="2" instance=ExtResource( 19 )]
+
+position = Vector2( -13501.6, 2096.02 )
+
+[node name="JupiMun2" parent="Sun/Jupiter" index="3" instance=ExtResource( 19 )]
+
+position = Vector2( -6513.88, -10668.8 )
+
+[node name="JupiMun3" parent="Sun/Jupiter" index="4" instance=ExtResource( 19 )]
+
+position = Vector2( 10249.8, 9149.35 )
+
+[node name="JupiMun4" parent="Sun/Jupiter" index="5" instance=ExtResource( 19 )]
+
+position = Vector2( -4896.03, 14448 )
+
+[node name="JupiMun5" parent="Sun/Jupiter" index="6" instance=ExtResource( 19 )]
+
+position = Vector2( 9829.35, -7257.3 )
+
+[node name="JupiMun6" parent="Sun/Jupiter" index="7" instance=ExtResource( 19 )]
+
+position = Vector2( 16912.4, -1295.34 )
+
+[node name="Saturn" parent="Sun" index="9" groups=[
+"planet",
+] instance=ExtResource( 20 )]
+
+position = Vector2( 118213, -68407.5 )
+rotation = -0.523599
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="SatuMu" parent="Sun/Saturn" index="3" instance=ExtResource( 19 )]
+
+position = Vector2( 11576.8, -4028.28 )
+
+[node name="SatuMu2" parent="Sun/Saturn" index="4" instance=ExtResource( 19 )]
+
+position = Vector2( -16845.6, 1538.4 )
+
+[node name="SatuMu3" parent="Sun/Saturn" index="5" instance=ExtResource( 19 )]
+
+position = Vector2( -7627.55, -11322.5 )
+
+[node name="SatuMu4" parent="Sun/Saturn" index="6" instance=ExtResource( 19 )]
+
+position = Vector2( -5707.11, 11999.9 )
+
+[node name="SatuMu5" parent="Sun/Saturn" index="7" instance=ExtResource( 19 )]
+
+position = Vector2( 9464.28, 9600.49 )
+
+[node name="SatuMu6" parent="Sun/Saturn" index="8" instance=ExtResource( 19 )]
+
+position = Vector2( 5239.33, -10266.8 )
+
+[node name="SatuMu7" parent="Sun/Saturn" index="9" instance=ExtResource( 19 )]
+
+position = Vector2( 534.266, -16025.4 )
+
+[node name="SatuMu8" parent="Sun/Saturn" index="10" instance=ExtResource( 19 )]
+
+position = Vector2( 4375.12, 15743 )
+
+[node name="SatuMu9" parent="Sun/Saturn" index="11" instance=ExtResource( 19 )]
+
+position = Vector2( -11084.3, 6817.16 )
+
+[node name="SatuMu10" parent="Sun/Saturn" index="12" instance=ExtResource( 19 )]
+
+position = Vector2( 15801.7, 3457.95 )
+
+[node name="SatuMu11" parent="Sun/Saturn" index="13" instance=ExtResource( 19 )]
+
+position = Vector2( -15501.3, -10170.8 )
+
+[node name="Uranus" parent="Sun" index="10" groups=[
+"planet",
+] instance=ExtResource( 21 )]
+
+position = Vector2( -162403, 14096.6 )
+rotation = 3.05433
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Transform" ]
+rotate = 0
+
+[node name="Neptune" parent="Sun" index="11" groups=[
+"planet",
+] instance=ExtResource( 22 )]
+
+position = Vector2( 176306, -40392.1 )
+rotation = -0.226893
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 5
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+rotate = 0
+
+[node name="Pluto" parent="Sun" index="12" instance=ExtResource( 19 )]
+
+position = Vector2( -98983.5, 171222 )
+rotation = 2.09439
+scale = Vector2( 1, 1 )
+
+[node name="Pluto2" parent="Sun" index="13" instance=ExtResource( 19 )]
+
+position = Vector2( 160533, -112799 )
+rotation = -0.637045
+scale = Vector2( 1, 1 )
+
+[node name="Pluto3" parent="Sun" index="14" instance=ExtResource( 19 )]
+
+position = Vector2( 195055, 28854.1 )
+rotation = 0.174533
+scale = Vector2( 1, 1 )
+
+[node name="Pluto4" parent="Sun" index="15" instance=ExtResource( 19 )]
+
+position = Vector2( 97865.8, -174084 )
+rotation = -1.0472
+scale = Vector2( 1, 1 )
+
+[node name="Pluto5" parent="Sun" index="16" instance=ExtResource( 19 )]
+
+position = Vector2( 1551.13, -200079 )
+rotation = -1.5708
+scale = Vector2( 1, 1 )
+
+[node name="Pluto6" parent="Sun" index="17" instance=ExtResource( 19 )]
+
+position = Vector2( 200371, -45517.9 )
+rotation = -0.20944
+scale = Vector2( 1, 1 )
+
+[node name="Pluto7" parent="Sun" index="18" instance=ExtResource( 19 )]
+
+position = Vector2( 150482, 139778 )
+rotation = 0.733038
+scale = Vector2( 1, 1 )
+
+[node name="Pluto8" parent="Sun" index="19" instance=ExtResource( 19 )]
+
+position = Vector2( 29306.8, 202775 )
+rotation = 1.39626
+scale = Vector2( 1, 1 )
+
+[node name="Pluto9" parent="Sun" index="20" instance=ExtResource( 19 )]
+
+position = Vector2( 136874, -148660 )
+rotation = -0.785398
+scale = Vector2( 1, 1 )
+
+[node name="Pluto10" parent="Sun" index="21" instance=ExtResource( 19 )]
+
+position = Vector2( 70935.2, 185952 )
+rotation = 1.16239
+scale = Vector2( 1, 1 )
+
+[node name="Rocket" parent="." index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 15697.9, 18640.2 )
+rotation = -0.523599
+scale = Vector2( 1, 1 )
+collision_layer = 3
+collision_mask = 3
+_sections_unfolded = [ "Collision", "Transform" ]
+rotate = 0
+
+[node name="SpawnTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 
 

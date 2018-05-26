@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/SpaceObject.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Planets/DeathStar.png" type="Texture" id=2]
+
+[node name="StartingPlanet" type="KinematicBody2D" groups=[
+"space_object",
+]]
+
+z_index = 10
+input_pickable = false
+collision_layer = 5
+collision_mask = 5
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+mass = 1
+wait = 10
+rotate = 0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -2700.35, -719.789, -2471.13, -1390.78, -2053.61, -1979.94, -1472.37, -2479.09, -661.897, -2806.4, -97.0239, -2880.05, 443.289, -2830.95, 942.669, -2740.94, 1523.92, -2454.54, 1974.18, -2078.13, 2391.69, -1570.8, 2588.17, -1153.48, 2710.97, -736.155 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="2"]
+
+scale = Vector2( 1, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -2708.52, 474.678, -2577.53, 1006.56, -2209.14, 1612.09, -1595.03, 2194.65, -841.866, 2579.24, 34.0957, 2710.16, 779.073, 2595.61, 1458.56, 2284.66, 2105.3, 1744.6, 2481.88, 1130.89, 2719.29, 459.898 )
+
+

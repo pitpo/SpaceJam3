@@ -47,16 +47,21 @@ func _process(delta):
 	else:
 		for i in range(recentNodes.size() - nodeBuffer + 1, recentNodes.size()):
 			recentNodes[i].hug_player()
+		for i in range(1, recentNodes.size() - nodeBuffer):
+			recentNodes[i].queue_free()
+	
 	
 	if camScale < 2:
 		camScale = log(log(mass/1024))
 	else:
-		camScale = log(mass)/2
+		camScale = log(mass)/8
 	if camScale < 1:
 		camScale = 1
 	
+	speed = 400 * camScale
+	
 	var curScale = lerp($Camera2D.zoom.x, camScale, 0.01)
-#	curScale = 10
+	#curScale = 40
 	$Camera2D.zoom = Vector2(curScale, curScale)
 
 func gravitate(object):

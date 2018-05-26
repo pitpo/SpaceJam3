@@ -1,37 +1,38 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/SpaceObject.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/SpriteSelector.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/SpaceObjects/Shoe.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 53.2494
-height = 56.1677
+radius = 4.37247
+height = 8.40829
 
-[node name="MediumTrash" type="KinematicBody2D"]
+[node name="SmallTrash" type="KinematicBody2D" index="0" groups=[
+"space_object",
+]]
 
 input_pickable = false
 collision_layer = 3
 collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
-mass = 90
+_sections_unfolded = [ "Collision", "collision" ]
+mass = 70
 wait = 10
 rotate = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -1.36035, 0 )
-script = ExtResource( 2 )
-set = "Medium"
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -3.78052, -6.59467 )
+position = Vector2( 0.0759125, 3.01579 )
 rotation = 1.5708
-scale = Vector2( 1.12684, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

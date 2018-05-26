@@ -33,7 +33,7 @@ func _ready():
 		else:
 			rotate = 1 # YOU SPIN ME ROUND
 	
-	mass = gets($Sprite).get_width() * gets($Sprite).get_height() * $Sprite.scale.x
+	
 	if wait > 0: arrow.visible = false
 
 func gets(sprite):
@@ -43,6 +43,7 @@ func gets(sprite):
 		return sprite.frames.get_frame(sprite.animation, sprite.frame)
 
 func _process(delta):
+	mass = gets($Sprite).get_width() * gets($Sprite).get_height() * $Sprite.scale.x
 	if hugPlayer:
 			hug_player()
 	if !merged:
@@ -55,7 +56,8 @@ func _process(delta):
 			arrow.rotation = dist.angle()
 			arrow.visible = (abs(dist.y) >= arrow.texture.get_height()/3 or abs(dist.x) >= arrow.texture.get_width()/3)
 		else:
-			arrow.visible = false
+			if is_in_group("planet"):
+				arrow.visible = false
 		
 		rotation_degrees += rotate
 		
@@ -72,11 +74,11 @@ func _process(delta):
 				set_collision_layer_bit(0, false)
 				set_collision_mask_bit(0, false)
 		
-		else
-			if is_in_group("planet"):
-				Util.player.gravitate(self)
+		else:
+			Util.player.gravitate(self)
 	else:
-		arrow.visible = false
+		if is_in_group("planet"):
+			arrow.visible = false
 
 func add_object(object):
 	var gp = object.global_position

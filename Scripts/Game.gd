@@ -3,6 +3,10 @@ extends Node2D
 onready var background = $ParallaxBackground/ParallaxLayer/Background
 onready var start_color = background.modulate
 
+export(PackedScene) var SmallTrash
+export(PackedScene) var MediumTrash
+export(PackedScene) var Shoe
+
 func _ready():
 	randomize()
 	
@@ -19,9 +23,16 @@ func _process(delta):
 	background.modulate.b = min(max(start_color.b - (Util.player.position.length() - 5335) / 10000, 0), start_color.b)
 	background.modulate.g = min(max(start_color.g - (Util.player.position.length() - 14000) / 10000, 0), start_color.g)
 	$Clouds.modulate = background.modulate
+	
+	var surroundingArea = getSurroundingArea()
+	
+	for trash in get_tree().get_nodes_in_group("trash"):
+		if trash.global_position.x > surroundingArea.topRight.x || trash.global_position.x < surroundingArea.topLeft.x || trash.global_position.y > surroundingArea.bottomLeft.y || trash.global_position.y < surroundingArea.topLeft.y:
+			trash.queue_free()
+
 
 func generate_belt(distance):
-	for i in range(2000):
+	for i in range(500):
 		var trash = preload("res://Nodes/SpaceObjects/SmallTrash.tscn").instance()
 		add_child(trash)
 		var angle = randf() * PI * 2
@@ -29,3 +40,58 @@ func generate_belt(distance):
 		
 		var sc = 0.5 + randf()*2
 		trash.scale = Vector2(sc, sc)
+
+func getSurroundingArea():
+	var camPos = $Player/Camera2D.get_camera_screen_center()
+	var camScale = $Player/Camera2D.scale.x
+	var topLeft = Vector2(camPos.x-camScale*(1920+960), camPos.y-camScale*(1080+540))
+	var bottomRight = Vector2(camPos.x+camScale*(1920+960), camPos.y+camScale*(1080+540))
+	var topRight = Vector2(bottomRight.x, topLeft.y)
+	var bottomLeft = Vector2(topLeft.x, bottomRight.y)
+	return {"topLeft": topLeft, "topRight": topRight, "bottomLeft": bottomLeft, "bottomRight": bottomRight}
+
+func _on_SpawnTimer_timeout():
+	# this is solid content lmao, might optimize it and make it easier to read someday
+	var spawnArea = getSurroundingArea()
+	var xDir = $Player.velocity.x > 0
+	var yDir = $Player.velocity.y > 0
+	var dir
+	if abs($Player.velocity.x) > abs($Player.velocity.y):
+		if xDir:
+			dir = 0
+		else:
+			dir = 1
+	else:
+		if yDir:
+			dir = 2
+		else:
+			dir = 3
+	var camPos = $Player/Camera2D.get_camera_screen_center()
+	var camScale = $Player/Camera2D.scale.x
+	for i in range(randi() % 5):
+		var xPos
+		var yPos
+		if dir == 0 || dir == 1:
+			if xDir:
+				xPos = rand_range(camPos.x+960*camScale, spawnArea.topRight.x)
+			else:
+				xPos = rand_range(spawnArea.topLeft.x, camPos.x-960*camScale)
+			yPos = rand_range(spawnArea.topLeft.y, spawnArea.bottomLeft.y)
+		else:
+			if yDir:
+				yPos = rand_range(camPos.y+540*camScale, spawnArea.bottomLeft.y)
+			else:
+				yPos = rand_range(spawnArea.topLeft.y, camPos.y-540*camScale)
+			xPos = rand_range(spawnArea.topLeft.x, spawnArea.topRight.x)
+		var type = randi() % 100
+		var trash
+		if type < 90:
+			trash = SmallTrash.instance()
+		elif type < 98:
+			trash = MediumTrash.instance()
+		else :
+			trash = Shoe.instance()
+		add_child(trash)
+		trash.add_to_group("trash")
+		trash.global_position = Vector2(xPos, yPos)
+		
