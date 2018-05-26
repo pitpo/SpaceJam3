@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var mass = 1
 var merged = false
 var motion = Vector2()
+var rotate
 
 onready var arrows = Util.player.get_node("Camera2D/CanvasLayer/Arrows")
 onready var camera = Util.player.get_node("Camera2D")
@@ -20,6 +21,10 @@ func _ready():
 	arrow.add_child(indicator)
 	indicator.position.x -= 4
 	indicator.raise()
+	if randi() % 101 < 100:
+		rotate = randf() - randf()
+	else:
+		rotate = 1 # YOU SPIN ME ROUND
 
 func gets(sprite):
 	if sprite.get_class() == "Sprite":
@@ -35,6 +40,8 @@ func _process(delta):
 		var dist = (global_position - (camera.get_camera_screen_center() + arrow.position - Vector2(960, 540)))
 		arrow.rotation = dist.angle()
 		arrow.visible = (abs(dist.y) >= arrow.texture.get_height()/3 or abs(dist.x) >= arrow.texture.get_width()/3)
+		
+		rotation_degrees += rotate
 		
 		if Util.player.mass > mass:
 			var gravity = (Util.player.position - position).normalized()
@@ -66,5 +73,5 @@ func add_object(object):
 	Util.player.mass += mass
 	
 func hug_player():
-	var vec = (Util.player.global_position - global_position).normalized()
+	var vec = (Util.player.get_node("Core").global_position - global_position).normalized()
 	move_and_slide(vec*50)
