@@ -7,10 +7,10 @@ path="res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex"
 [deps]
 
 source_file="res://Sprites/PlayerLight.png"
-source_md5="e77899f2da0eae5037543ee29073121c"
+source_md5="39baade197747ca44d7b2a1327ceeaf5"
 
 dest_files=[ "res://.import/PlayerLight.png-6dbe134b0572b75c6c385c285a0be0a8.stex" ]
-dest_md5="b37440156e4d8af30d627fef0ca33bfa"
+dest_md5="2696bef82abbc8b20e2b4fd2096df19d"
 
 [params]
 
