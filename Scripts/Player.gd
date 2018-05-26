@@ -12,7 +12,7 @@ func _ready():
 	var pos = $"../StartingPlanet".position
 	# adjust Y position to spawn at the top of the planet
 	pos.y -= $"../StartingPlanet/Sprite".texture.get_width() * $"../StartingPlanet".scale.y / 2
-	pos.y -= 160
+	pos.y -= 100
 	position = pos
 	
 	velocity.x = 1
@@ -40,7 +40,7 @@ func gravitate(object):
 	var dist = object.position - position
 	# no idea what is going on down there but it works
 	if (dist.length() < 3000):
-		var gravity = dist.normalized() * (object.get_node("CollisionShape2D").shape.radius * object.scale.x * 2 / dist.length())
+		var gravity = dist.normalized() * (object.get_node("CollisionShape2D").shape.radius * object.scale.x * 3 / dist.length())
 		if mass/object.mass/10 < 0.05:
 			velocity += gravity * 0.95
 		else:
