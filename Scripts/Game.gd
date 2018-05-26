@@ -19,9 +19,9 @@ func _ready():
 	generate_belt(88000)
 
 func _process(delta):
-	background.modulate.r = min(start_color.r + Util.player.position.length() / 1000000, 1)
-	background.modulate.b = min(max(start_color.b - (Util.player.position.length() - 533500) / 1000000, 0), start_color.b)
-	background.modulate.g = min(max(start_color.g - (Util.player.position.length() - 1400000) / 1000000, 0), start_color.g)
+	background.modulate.r = min(start_color.r + Util.player.position.length() / 200000, 1)
+	background.modulate.b = min(max(start_color.b - (Util.player.position.length() - 1067000) / 200000, 0), start_color.b)
+	background.modulate.g = min(max(start_color.g - (Util.player.position.length() - 2800000) / 200000, 0), start_color.g)
 	$Clouds.modulate = background.modulate
 	
 	var surroundingArea = getSurroundingArea()
