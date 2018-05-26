@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/SpaceObjects/SmallTrash.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Nodes/SpaceObjects/Saturn.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Nodes/SpaceObjects/Uranus.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Nodes/SpaceObjects/Neptune.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Music/Interstellar 8-Bit No Time For Caution (Docking Scene Music).ogg" type="AudioStream" id=23]
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -120,13 +121,11 @@ rotate = 0.0
 
 position = Vector2( -1633.39, -1259.43 )
 rotation = 0.733038
-scale = Vector2( 1, 1 )
 rotate = 0
 
 [node name="MATECZKA ROSIJA" parent="Sun" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 19233.3, 32.3691 )
-scale = Vector2( 1, 1 )
 
 [node name="Rocket" parent="Sun/MATECZKA ROSIJA" index="2" instance=ExtResource( 13 )]
 
@@ -137,14 +136,12 @@ rotate = -0.02
 
 position = Vector2( -1106.99, 127.308 )
 rotation = 1.15192
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform" ]
 rotate = 0.3
 
 [node name="DeathStar" parent="Sun" index="4" instance=ExtResource( 14 )]
 
 position = Vector2( 225953, 48716.2 )
-scale = Vector2( 1, 1 )
 
 [node name="Venus" parent="Sun" index="5" groups=[
 "planet",
@@ -152,7 +149,6 @@ scale = Vector2( 1, 1 )
 
 position = Vector2( 46223.8, -12016.4 )
 rotation = -0.261799
-scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 5
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -164,7 +160,6 @@ rotate = 0
 
 position = Vector2( 17891.2, -26635.8 )
 rotation = -0.977384
-scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 5
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -174,7 +169,6 @@ rotate = 0
 
 position = Vector2( 27519.5, -74126.1 )
 rotation = -1.22173
-scale = Vector2( 1, 1 )
 rotate = 0
 
 [node name="Jupiter" parent="Sun" index="8" groups=[
@@ -183,7 +177,6 @@ rotate = 0
 
 position = Vector2( 96133.9, 34844.9 )
 rotation = 0.349066
-scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 5
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
@@ -218,7 +211,6 @@ position = Vector2( 16912.4, -1295.34 )
 
 position = Vector2( 118213, -68407.5 )
 rotation = -0.523599
-scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 5
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
@@ -273,7 +265,6 @@ position = Vector2( -15501.3, -10170.8 )
 
 position = Vector2( -162403, 14096.6 )
 rotation = 3.05433
-scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 5
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -285,7 +276,6 @@ rotate = 0
 
 position = Vector2( 176306, -40392.1 )
 rotation = -0.226893
-scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 5
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
@@ -295,67 +285,56 @@ rotate = 0
 
 position = Vector2( -98983.5, 171222 )
 rotation = 2.09439
-scale = Vector2( 1, 1 )
 
 [node name="Pluto2" parent="Sun" index="13" instance=ExtResource( 19 )]
 
 position = Vector2( 160533, -112799 )
 rotation = -0.637045
-scale = Vector2( 1, 1 )
 
 [node name="Pluto3" parent="Sun" index="14" instance=ExtResource( 19 )]
 
 position = Vector2( 195055, 28854.1 )
 rotation = 0.174533
-scale = Vector2( 1, 1 )
 
 [node name="Pluto4" parent="Sun" index="15" instance=ExtResource( 19 )]
 
 position = Vector2( 97865.8, -174084 )
 rotation = -1.0472
-scale = Vector2( 1, 1 )
 
 [node name="Pluto5" parent="Sun" index="16" instance=ExtResource( 19 )]
 
 position = Vector2( 1551.13, -200079 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 
 [node name="Pluto6" parent="Sun" index="17" instance=ExtResource( 19 )]
 
 position = Vector2( 200371, -45517.9 )
 rotation = -0.20944
-scale = Vector2( 1, 1 )
 
 [node name="Pluto7" parent="Sun" index="18" instance=ExtResource( 19 )]
 
 position = Vector2( 150482, 139778 )
 rotation = 0.733038
-scale = Vector2( 1, 1 )
 
 [node name="Pluto8" parent="Sun" index="19" instance=ExtResource( 19 )]
 
 position = Vector2( 29306.8, 202775 )
 rotation = 1.39626
-scale = Vector2( 1, 1 )
 
 [node name="Pluto9" parent="Sun" index="20" instance=ExtResource( 19 )]
 
 position = Vector2( 136874, -148660 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Pluto10" parent="Sun" index="21" instance=ExtResource( 19 )]
 
 position = Vector2( 70935.2, 185952 )
 rotation = 1.16239
-scale = Vector2( 1, 1 )
 
 [node name="Rocket" parent="." index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 15697.9, 18640.2 )
 rotation = -0.523599
-scale = Vector2( 1, 1 )
 collision_layer = 3
 collision_mask = 3
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -367,6 +346,14 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 

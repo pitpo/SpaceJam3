@@ -4,6 +4,7 @@ var mass = 4000
 var speed = 400
 var velocity = Vector2()
 var camScale = 0
+var recentNodes = []
 
 func _init():
 	Util.player = self
@@ -39,16 +40,22 @@ func _process(delta):
 	if collision && collision.collider.mass > mass:
 		velocity = velocity.slide(collision.normal)
 	
-	var recentNodes = get_tree().get_nodes_in_group("player")
 	var nodeBuffer = log(mass) * 10
 	if recentNodes.size() < nodeBuffer:
 		for i in range(1, recentNodes.size()):
-			recentNodes[i].hug_player()
+			if recentNodes[i]:
+				var ref = weakref(recentNodes[i])
+				if ref.get_ref(): ref.get_ref().hug_player()
 	else:
 		for i in range(recentNodes.size() - nodeBuffer + 1, recentNodes.size()):
-			recentNodes[i].hug_player()
+			if recentNodes[i]:
+				var ref = weakref(recentNodes[i])
+				if ref.get_ref(): ref.get_ref().hug_player()
 		for i in range(1, recentNodes.size() - nodeBuffer):
-			recentNodes[i].queue_free()
+			if recentNodes[i]:
+				var ref = weakref(recentNodes[i])
+				if ref.get_ref(): ref.get_ref().queue_free()
+				recentNodes[i] = null
 	
 	
 	if camScale < 2:
@@ -88,3 +95,4 @@ func add_object(object):
 	object.global_position = gp
 	object.global_rotation = gr
 	Util.player.mass += mass
+	recentNodes.append(object)

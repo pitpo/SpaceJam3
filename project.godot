@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="SpacjeJam3"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/GameTest.tscn"
 boot_splash/image="res://Splash.png"
 config/icon="res://icon.png"
 

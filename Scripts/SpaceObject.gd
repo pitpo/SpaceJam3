@@ -94,6 +94,7 @@ func add_object(object):
 	object.global_position = gp
 	object.global_rotation = gr
 	Util.player.mass += mass
+	Util.player.recentNodes.append(object)
 	
 	hugPlayer = true
 #	yield(get_tree().create_timer(10), "timeout")

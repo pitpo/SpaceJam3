@@ -19,9 +19,9 @@ func _ready():
 	generate_belt(88000)
 
 func _process(delta):
-	background.modulate.r = min(start_color.r + Util.player.position.length() / 10000, 1)
-	background.modulate.b = min(max(start_color.b - (Util.player.position.length() - 5335) / 10000, 0), start_color.b)
-	background.modulate.g = min(max(start_color.g - (Util.player.position.length() - 14000) / 10000, 0), start_color.g)
+	background.modulate.r = min(start_color.r + Util.player.position.length() / 1000000, 1)
+	background.modulate.b = min(max(start_color.b - (Util.player.position.length() - 533500) / 1000000, 0), start_color.b)
+	background.modulate.g = min(max(start_color.g - (Util.player.position.length() - 1400000) / 1000000, 0), start_color.g)
 	$Clouds.modulate = background.modulate
 	
 	var surroundingArea = getSurroundingArea()
@@ -87,10 +87,15 @@ func _on_SpawnTimer_timeout():
 		var trash
 		if type < 90:
 			trash = SmallTrash.instance()
+			var sc = 0.5 + randf()*2
+			trash.scale = Vector2(sc, sc)
 		elif type < 98:
 			trash = MediumTrash.instance()
+			var sc = 0.5 + randf()*2
+			trash.scale = Vector2(sc, sc)
 		else :
 			trash = Shoe.instance()
+		
 		add_child(trash)
 		trash.add_to_group("trash")
 		trash.global_position = Vector2(xPos, yPos)

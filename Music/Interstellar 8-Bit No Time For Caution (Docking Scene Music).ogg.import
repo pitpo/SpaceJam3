@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Interstellar 8-Bit No Time For Caution (Docking Scene Music).ogg-4bd27ad715e18dfd44185feef0de84ce.oggstr"
+
+[deps]
+
+source_file="res://Music/Interstellar 8-Bit No Time For Caution (Docking Scene Music).ogg"
+source_md5="d6b4b7b1b7f22d32879cd119ddd531e7"
+
+dest_files=[ "res://.import/Interstellar 8-Bit No Time For Caution (Docking Scene Music).ogg-4bd27ad715e18dfd44185feef0de84ce.oggstr" ]
+dest_md5="16f760cb78d2077efbb3eb23ecab830c"
+
+[params]
+
+loop=true
+loop_offset=0
