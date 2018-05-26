@@ -11,5 +11,5 @@ func _ready():
 		var trash = [trash1, trash2][randi() % 2].instance()
 		trash.position.x = rand_range(size, size*2) * sign(randf() - 0.5)
 		trash.position.y = (abs(randf() * trash.position.x/8) - size/8) * sign(randf() - 0.5)
-		print(trash.position.y)
+#		print(trash.position.y)
 		get_parent().call_deferred("add_child", trash)
