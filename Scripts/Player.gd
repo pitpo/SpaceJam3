@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 var mass = 100
-export(int) var SPEED # will be calculted dynamically from mass in the future
+var speed = 400
 var velocity = Vector2()
 
 func _init():
 	Util.player = self
-
+	
 func _ready():
 	# spawn next to a planet (earth? XD), orbitting around it
 	var pos = $"../StartingPlanet".position
@@ -15,50 +15,36 @@ func _ready():
 	pos.y -= 160
 	position = pos
 	
+	velocity.x = 1
+	velocity.y = 0
+
 func _process(delta):
-
-	# MOVEMENT
-	# use controls to alter the vector
+	# player can slightly manipulate the movement vector
+	if Input.is_action_pressed("ui_right"):
+		velocity.x += 1
 	
-	# current implementation is temporary
-	if Input.is_action_pressed("ui_right") && velocity.x < 20:
-		velocity.x += 1
-	elif velocity.x > 0:
+	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
-		
-	if Input.is_action_pressed("ui_left") && velocity.x > -20:
-		velocity.x -= 1
-	elif velocity.x < 0:
-		velocity.x += 1
-		
-	if Input.is_action_pressed("ui_up") && velocity.y > -20:
-		velocity.y -= 1
-	elif velocity.y < 0:
+	
+	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
-		
-	if Input.is_action_pressed("ui_down") && velocity.y < 20:
-		velocity.y += 1
-	elif velocity.y > 0:
+	
+	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	
-	var curVelocity = velocity
-	if velocity.length() > 0:
-		curVelocity = curVelocity.normalized() * SPEED
-	
-	if velocity.length_squared() > 0: rotation = velocity.angle()
-	move_and_slide(curVelocity * delta*50)
-
-const MAX_GRAVITY = 2
+	rotation = velocity.normalized().angle()
+	velocity = velocity.normalized() * speed
+	move_and_collide(velocity * delta)
 
 func gravitate(object):
 	var dist = object.position - position
-	var gravity = dist.normalized() * object.mass / dist.length() * 10
-	if gravity.length() > MAX_GRAVITY: gravity = gravity.normalized() * MAX_GRAVITY
-	
-	var collision = move_and_collide(gravity)
-	
-	if collision and collision.collider.is_in_group("space_object"):
-		print(collision.collider.name)
+	# no idea what is going on down there but it works
+	if (dist.length() < 3000):
+		var gravity = dist.normalized() * (object.get_node("CollisionShape2D").shape.radius * object.scale.x * 2 / dist.length())
+		if mass/object.mass/10 < 0.05:
+			velocity += gravity * 0.95
+		else:
+			velocity += gravity * (1 - mass/object.mass/10)
 
 func add_object(object):
 	var gp = object.global_position
