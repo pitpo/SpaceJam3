@@ -62,3 +62,7 @@ func add_object(object):
 	
 	object.global_position = gp
 	Util.player.mass += mass
+	
+func hug_player():
+	var vec = (Util.player.global_position - global_position).normalized()
+	move_and_slide(vec*50)

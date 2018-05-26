@@ -35,6 +35,14 @@ func _process(delta):
 	rotation = velocity.normalized().angle()
 	velocity = velocity.normalized() * speed
 	move_and_collide(velocity * delta)
+	var recentNodes = get_tree().get_nodes_in_group("player")
+	print(recentNodes.size())
+	if recentNodes.size() < 22:
+		for i in range(1, recentNodes.size()):
+			recentNodes[i].hug_player()
+	else:
+		for i in range(recentNodes.size() - 21, recentNodes.size()):
+			recentNodes[i].hug_player()
 
 func gravitate(object):
 	var dist = object.position - position

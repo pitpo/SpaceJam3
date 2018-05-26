@@ -8,17 +8,17 @@
 [ext_resource path="res://Nodes/SpaceObjects/StartingPlanet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=7]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Planet" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( -236.222, -384.586 )
+position = Vector2( 1487.37, -673.815 )
 
 [node name="Planet2" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -676.983, -434.92 )
+position = Vector2( 1912.18, -575.762 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -50,7 +50,7 @@ _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-modulate = Color( 0.466667, 0.611098, 0.886275, 1 )
+modulate = Color( 0.466667, 0.443137, 0.886275, 1 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3840, 2160 )
@@ -63,22 +63,22 @@ mass = 1000
 
 [node name="SmallTrash" parent="." index="6" instance=ExtResource( 4 )]
 
-position = Vector2( -537.865, -52.186 )
+position = Vector2( 1623.55, -411.836 )
 
 [node name="MediumTrash" parent="." index="7" instance=ExtResource( 7 )]
 
-position = Vector2( -213.879, -689.906 )
+position = Vector2( -216.395, -689.906 )
 
 [node name="MediumTrash2" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( -960.278, -224.432 )
+position = Vector2( 1966.06, 1.92102 )
 
 [node name="SmallTrash2" parent="." index="9" instance=ExtResource( 4 )]
 
-position = Vector2( -863.902, 183.627 )
+position = Vector2( 1398.16, -158.418 )
 
 [node name="SmallTrash3" parent="." index="10" instance=ExtResource( 4 )]
 
-position = Vector2( -439.439, 306.66 )
+position = Vector2( 1671.65, 467.622 )
 
 
