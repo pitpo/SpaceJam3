@@ -25,3 +25,6 @@ func generate_belt(distance):
 		add_child(trash)
 		var angle = randf() * PI * 2
 		trash.position = Vector2(sin(angle) * distance, cos(angle) * distance)
+		
+		var sc = 0.5 + randf()*2
+		trash.scale = Vector2(sc, sc)
