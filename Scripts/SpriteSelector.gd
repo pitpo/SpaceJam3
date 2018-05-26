@@ -14,4 +14,5 @@ func _ready():
 			newScale = randi() % 14
 		newScale = newScale/10.0
 		scale = Vector2(newScale, newScale)
+		$"../CollisionShape2D".scale = Vector2(newScale, newScale)
 		 

@@ -52,7 +52,7 @@ func _process(delta):
 				var ref = weakref(recentNodes[i])
 				if ref.get_ref(): ref.get_ref().hug_player()
 		for i in range(1, recentNodes.size() - nodeBuffer):
-			if recentNodes[i]:
+			if recentNodes[i] && !recentNodes[i].is_in_group("planet"):
 				var ref = weakref(recentNodes[i])
 				if ref.get_ref(): ref.get_ref().queue_free()
 				recentNodes[i] = null
@@ -61,11 +61,14 @@ func _process(delta):
 	if camScale < 2:
 		camScale = log(log(mass/1024))
 	else:
-		camScale = log(mass)/8
+		camScale = log(mass)/2
 	if camScale < 1:
 		camScale = 1
 	
-	speed = 400 * camScale
+	if camScale > 2:
+		speed = 400 * camScale/4
+	else:
+		speed = 400 * camScale
 	
 	var curScale = lerp($Camera2D.zoom.x, camScale, 0.01)
 	#curScale = 40
@@ -96,3 +99,6 @@ func add_object(object):
 	object.global_rotation = gr
 	Util.player.mass += mass
 	recentNodes.append(object)
+	
+func hug_player():
+	pass

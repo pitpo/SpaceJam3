@@ -43,7 +43,7 @@ func generate_belt(distance):
 
 func getSurroundingArea():
 	var camPos = $Player/Camera2D.get_camera_screen_center()
-	var camScale = $Player/Camera2D.scale.x
+	var camScale = $Player/Camera2D.zoom.x
 	var topLeft = Vector2(camPos.x-camScale*(1920+960), camPos.y-camScale*(1080+540))
 	var bottomRight = Vector2(camPos.x+camScale*(1920+960), camPos.y+camScale*(1080+540))
 	var topRight = Vector2(bottomRight.x, topLeft.y)
@@ -55,23 +55,13 @@ func _on_SpawnTimer_timeout():
 	var spawnArea = getSurroundingArea()
 	var xDir = $Player.velocity.x > 0
 	var yDir = $Player.velocity.y > 0
-	var dir
-	if abs($Player.velocity.x) > abs($Player.velocity.y):
-		if xDir:
-			dir = 0
-		else:
-			dir = 1
-	else:
-		if yDir:
-			dir = 2
-		else:
-			dir = 3
+	var dir = abs($Player.velocity.x) > abs($Player.velocity.y)
 	var camPos = $Player/Camera2D.get_camera_screen_center()
-	var camScale = $Player/Camera2D.scale.x
+	var camScale = $Player/Camera2D.zoom.x
 	for i in range(randi() % 5):
 		var xPos
 		var yPos
-		if dir == 0 || dir == 1:
+		if dir:
 			if xDir:
 				xPos = rand_range(camPos.x+960*camScale, spawnArea.topRight.x)
 			else:
