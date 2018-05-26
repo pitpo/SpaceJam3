@@ -7,10 +7,10 @@ path="res://.import/Jupiter_1dot9.png-170c1f928d8a6ac9f0ab70dedcd89a52.stex"
 [deps]
 
 source_file="res://Sprites/Planets/Jupiter_1dot9.png"
-source_md5="37ede22b65dca22901acf2606847a517"
+source_md5="0a334937aca5a9150ec991c6ef641a53"
 
 dest_files=[ "res://.import/Jupiter_1dot9.png-170c1f928d8a6ac9f0ab70dedcd89a52.stex" ]
-dest_md5="2cf025ab84665457d6bb6df321d09bac"
+dest_md5="ad9ffe16af46b6608e00237d968456d5"
 
 [params]
 
