@@ -47,7 +47,7 @@ func _process(delta):
 			hug_player()
 	if !merged:
 		wait -= delta
-		if wait <= 0:
+		if wait <= 0 and is_in_group("planet"):
 			arrow.position.x = min(max(arrow.texture.get_width()/2, (global_position - camera.get_camera_screen_center()).x + 960), 1920 - arrow.texture.get_width()/2)
 			arrow.position.y = min(max(arrow.texture.get_height()/2, (global_position - camera.get_camera_screen_center()).y + 540), 1080 - arrow.texture.get_height()/2)
 			
@@ -72,8 +72,9 @@ func _process(delta):
 				set_collision_layer_bit(0, false)
 				set_collision_mask_bit(0, false)
 		
-		else:
-			Util.player.gravitate(self)
+		else
+			if is_in_group("planet"):
+				Util.player.gravitate(self)
 	else:
 		arrow.visible = false
 
