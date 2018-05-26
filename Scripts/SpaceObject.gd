@@ -80,7 +80,8 @@ func add_object(object):
 	
 	object.get_parent().remove_child(object)
 	Util.player.add_child(object)
-	$Sprite.show_behind_parent = true
+	object.get_node("Sprite").show_behind_parent = true
+	object.z_index = -1
 	object.add_to_group("player")
 	
 	object.global_position = gp
