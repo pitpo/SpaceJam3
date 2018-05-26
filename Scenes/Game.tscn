@@ -50,7 +50,7 @@ _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-modulate = Color( 0.466667, 0.443137, 0.886275, 1 )
+modulate = Color( 0.466667, 0.611098, 0.886275, 1 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 3840, 2160 )
