@@ -81,24 +81,4 @@ wait = 10
 
 [node name="Clouds" type="Node2D" parent="." index="9"]
 
-[node name="SmallTrash4" parent="." index="10" instance=ExtResource( 3 )]
-
-position = Vector2( 1549.55, 224.561 )
-wait = 10
-
-[node name="SmallTrash5" parent="." index="11" instance=ExtResource( 3 )]
-
-position = Vector2( 1695.22, -199.023 )
-wait = 10
-
-[node name="SmallTrash6" parent="." index="12" instance=ExtResource( 3 )]
-
-position = Vector2( 1297.93, -429.347 )
-wait = 10
-
-[node name="SmallTrash7" parent="." index="13" instance=ExtResource( 3 )]
-
-position = Vector2( 1332.36, -582.897 )
-wait = 10
-
 
