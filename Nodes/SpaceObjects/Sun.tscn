@@ -63,7 +63,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Atmo" type="Sprite" parent="Sprite" index="0"]
 
 show_behind_parent = true
-scale = Vector2( 1.66867, 1.66867 )
+scale = Vector2( 1.68487, 1.68487 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
@@ -80,7 +80,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Core" type="Sprite" parent="Sprite" index="1"]
 
-scale = Vector2( 0.968674, 0.968674 )
+scale = Vector2( 0.984867, 0.984867 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 

@@ -7,7 +7,7 @@
 [ext_resource path="res://Nodes/SpaceObjects/StartingPlanet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=6]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -52,7 +52,6 @@ _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 position = Vector2( 533.524, -129.174 )
 mass = 1000
-wait = 10
 
 [node name="SmallTrash" parent="." index="4" instance=ExtResource( 3 )]
 
