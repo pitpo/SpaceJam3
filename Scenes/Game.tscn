@@ -8,7 +8,7 @@
 [ext_resource path="res://Nodes/SpaceObjects/StartingPlanet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=7]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -45,15 +45,16 @@ _sections_unfolded = [ "Scroll" ]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 3840, 2160 )
+motion_mirroring = Vector2( 2304, 2304 )
 _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
 modulate = Color( 0.466667, 0.611098, 0.886275, 1 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 3840, 2160 )
+region_rect = Rect2( 0, 0, 7680, 7680 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="StartingPlanet" parent="." index="5" instance=ExtResource( 6 )]

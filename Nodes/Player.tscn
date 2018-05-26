@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/PlayerCore.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/PlayerLight.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -159,5 +160,11 @@ playback_speed = 11.0
 anims/CoreAnim = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+
+modulate = Color( 1, 1, 1, 0.501961 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
 
 
