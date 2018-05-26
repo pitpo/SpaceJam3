@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 9500.0
 
-[node name="StartingPlanet" type="KinematicBody2D" groups=[
+[node name="StartingPlanet" type="KinematicBody2D" index="0" groups=[
 "space_object",
 ]]
 
@@ -24,7 +24,7 @@ wait = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 1.7, 1.7 )
+scale = Vector2( 3.4, 3.4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

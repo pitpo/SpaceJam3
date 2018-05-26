@@ -23,14 +23,13 @@ wait = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 1.9, 1.9 )
+scale = Vector2( 3.8, 3.8 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-disabled = true
 _sections_unfolded = [ "Transform" ]
 
 
