@@ -3,6 +3,7 @@ extends KinematicBody2D
 var mass = 4000
 var speed = 400
 var velocity = Vector2()
+var camScale
 
 func _init():
 	Util.player = self
@@ -46,6 +47,13 @@ func _process(delta):
 	else:
 		for i in range(recentNodes.size() - 21, recentNodes.size()):
 			recentNodes[i].hug_player()
+	
+	camScale = log(log(mass/1024.0))
+	if camScale < 1:
+		camScale = 1
+	
+	var curScale = lerp($Camera2D.zoom.x, camScale, 0.01)
+	$Camera2D.zoom = Vector2(curScale, curScale)
 
 func gravitate(object):
 	var dist = object.position - position
