@@ -83,4 +83,6 @@ position = Vector2( 1398.16, -158.418 )
 
 position = Vector2( 1671.65, 467.622 )
 
+[node name="Clouds" type="Node2D" parent="." index="11"]
+
 
