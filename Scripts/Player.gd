@@ -41,6 +41,7 @@ func gravitate(object):
 	# no idea what is going on down there but it works
 	if (dist.length() < 3000):
 		var gravity = dist.normalized() * (object.get_node("CollisionShape2D").shape.radius * object.scale.x * 3 / dist.length())
+		print(object.name)
 		if mass/object.mass/10 < 0.05:
 			velocity += gravity * 0.95
 		else:
