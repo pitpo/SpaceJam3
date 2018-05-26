@@ -7,10 +7,10 @@ path="res://.import/SunCenter.png-d59ca7d57b8479535173b58bba5c28ca.stex"
 [deps]
 
 source_file="res://Sprites/Planets/SunCenter.png"
-source_md5="f8c0aa23e74a477a26b753aa8d822023"
+source_md5="1ad9afb3e457a51827417d19bc9b529f"
 
 dest_files=[ "res://.import/SunCenter.png-d59ca7d57b8479535173b58bba5c28ca.stex" ]
-dest_md5="4691d616f6592aa97d452ccfefbbcb19"
+dest_md5="4033d8fbf9a00b6422b586463e3814f4"
 
 [params]
 

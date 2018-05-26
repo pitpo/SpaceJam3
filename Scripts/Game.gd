@@ -6,7 +6,7 @@ onready var start_color = background.modulate
 func _ready():
 	randomize()
 	
-	for i in range(10000):
+	for i in range(100):
 		var cloud = load("res://Nodes/Cloud.tscn").instance()
 		cloud.position = Vector2(rand_range(-100000, 100000), rand_range(-100000, 100000))
 		cloud.z_index = rand_range(-100, 0)

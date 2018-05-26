@@ -41,7 +41,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 radius = 16384.0
 
-[node name="StartingPlanet" type="KinematicBody2D" index="0" groups=[
+[node name="StartingPlanet" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
@@ -56,14 +56,14 @@ wait = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Atmo" type="Sprite" parent="Sprite" index="0"]
 
 show_behind_parent = true
-scale = Vector2( 1.68487, 1.68487 )
+scale = Vector2( 1.63535, 1.63535 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
@@ -80,7 +80,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Core" type="Sprite" parent="Sprite" index="1"]
 
-scale = Vector2( 0.984867, 0.984867 )
+scale = Vector2( 0.935349, 0.935349 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 

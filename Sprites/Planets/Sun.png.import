@@ -7,10 +7,10 @@ path="res://.import/Sun.png-011225ad2afd1fcd2fb5c2616fa7ce6d.stex"
 [deps]
 
 source_file="res://Sprites/Planets/Sun.png"
-source_md5="f300716f59ba804cc04f288dc1c56a18"
+source_md5="970ed43be12bf4fc1c5e0f4505191cfc"
 
 dest_files=[ "res://.import/Sun.png-011225ad2afd1fcd2fb5c2616fa7ce6d.stex" ]
-dest_md5="11f8f1e332a05d84721e6af1dc00fbd4"
+dest_md5="93bec4264fd29fcafc619e3e8b63b027"
 
 [params]
 

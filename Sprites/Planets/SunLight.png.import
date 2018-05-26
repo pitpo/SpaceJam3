@@ -7,10 +7,10 @@ path="res://.import/SunLight.png-76c0d32e51935bb66f2dacc98d6dd53d.stex"
 [deps]
 
 source_file="res://Sprites/Planets/SunLight.png"
-source_md5="69f1c7457989f713e4b76a0bfc672ddc"
+source_md5="3d05fa93dab37f6030569ac295bac5b9"
 
 dest_files=[ "res://.import/SunLight.png-76c0d32e51935bb66f2dacc98d6dd53d.stex" ]
-dest_md5="a093bf972947bf24279caf2080141c86"
+dest_md5="929cb8422396394b9c437919a0789b69"
 
 [params]
 
