@@ -8,7 +8,7 @@
 [ext_resource path="res://Nodes/SpaceObjects/StartingPlanet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=7]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -82,5 +82,7 @@ position = Vector2( 1398.16, -158.418 )
 [node name="SmallTrash3" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 1671.65, 467.622 )
+
+[node name="Clouds" type="Node2D" parent="." index="11"]
 
 
