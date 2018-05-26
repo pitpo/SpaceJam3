@@ -6,6 +6,7 @@ export var wait = 10
 var merged = false
 var motion = Vector2()
 var rotate
+var hugPlayer = false
 
 
 onready var arrows = Util.player.get_node("Camera2D/CanvasLayer/Arrows")
@@ -28,7 +29,7 @@ func _ready():
 		rotate = randf() - randf()
 	else:
 		rotate = 1 # YOU SPIN ME ROUND
-
+	
 	mass = gets($Sprite).get_width() * gets($Sprite).get_height()
 	if wait > 0: arrow.visible = false
 
@@ -39,6 +40,8 @@ func gets(sprite):
 		return sprite.frames.get_frame(sprite.animation, sprite.frame)
 
 func _process(delta):
+	if hugPlayer:
+			hug_player()
 	if !merged:
 		wait -= delta
 		if wait <= 0:
@@ -76,12 +79,19 @@ func add_object(object):
 	object.merged = true
 	
 	object.get_parent().remove_child(object)
-	add_child(object)
+	Util.player.add_child(object)
+	$Sprite.show_behind_parent = true
 	object.add_to_group("player")
 	
 	object.global_position = gp
 	Util.player.mass += mass
 	
+	hugPlayer = true
+#	yield(get_tree().create_timer(10), "timeout")
+#	hugPlayer = false
+		
 func hug_player():
 	var vec = (Util.player.get_node("Core").global_position - global_position).normalized()
+	vec.x += randf() - randf()
+	vec.y += randf() - randf()
 	move_and_slide(vec*50)

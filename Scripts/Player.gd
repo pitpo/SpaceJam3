@@ -64,6 +64,7 @@ func add_object(object):
 	
 	object.get_parent().remove_child(object)
 	add_child(object)
+	object.get_node("Sprite").show_behind_parent = true
 	object.add_to_group("player")
 	
 	object.global_position = gp
