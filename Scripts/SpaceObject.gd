@@ -38,9 +38,11 @@ func _process(delta):
 		
 		if Util.player.mass > mass:
 			var gravity = (Util.player.position - position).normalized()
-			motion += gravity
 			
-			var collision = move_and_collide(motion)
+			var movementSpeed = (Util.player.mass - mass) / (Util.player.position.length() - position.length()) * 100
+			if movementSpeed > 300:
+				movementSpeed = 300
+			var collision = move_and_collide(gravity * movementSpeed * delta)
 			
 			if collision and collision.collider.is_in_group("player"):
 				collision.collider.add_object(self)

@@ -45,16 +45,15 @@ _sections_unfolded = [ "Scroll" ]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 2304, 2304 )
+motion_mirroring = Vector2( 3840, 2160 )
 _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-modulate = Color( 0.466667, 0.611098, 0.886275, 1 )
-scale = Vector2( 0.6, 0.6 )
+modulate = Color( 0.466667, 0.443137, 0.886275, 1 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 7680, 7680 )
+region_rect = Rect2( 0, 0, 3840, 2160 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="StartingPlanet" parent="." index="5" instance=ExtResource( 6 )]
@@ -69,10 +68,12 @@ position = Vector2( 1623.55, -411.836 )
 [node name="MediumTrash" parent="." index="7" instance=ExtResource( 7 )]
 
 position = Vector2( -216.395, -689.906 )
+mass = 600
 
 [node name="MediumTrash2" parent="." index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 1966.06, 1.92102 )
+mass = 600
 
 [node name="SmallTrash2" parent="." index="9" instance=ExtResource( 4 )]
 
