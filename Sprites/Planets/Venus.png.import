@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moon.png-0ef8f22afa181951f3037595095b105c.stex"
+path="res://.import/Venus.png-0afa76d642ba88e1c76198f65e31148f.stex"
 
 [deps]
 
-source_file="res://Sprites/Planets/Moon.png"
-source_md5="eef8454d8e562224a6c3be597caddd77"
+source_file="res://Sprites/Planets/Venus.png"
+source_md5="32996df152ca53672c155cd3ec0dfe8c"
 
-dest_files=[ "res://.import/Moon.png-0ef8f22afa181951f3037595095b105c.stex" ]
-dest_md5="00e9072640a2b633c3c245e97f2358a7"
+dest_files=[ "res://.import/Venus.png-0afa76d642ba88e1c76198f65e31148f.stex" ]
+dest_md5="fc99343b5de5f08d307572ad2ce7ee90"
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moon.png-0ef8f22afa181951f3037595095b105c.stex"
+path="res://.import/Mercury.png-a87cc7355b8f19c67aa75554872ed930.stex"
 
 [deps]
 
-source_file="res://Sprites/Planets/Moon.png"
-source_md5="eef8454d8e562224a6c3be597caddd77"
+source_file="res://Sprites/Planets/Mercury.png"
+source_md5="5d319f26a2a02f4ac577669fd7c1d4cb"
 
-dest_files=[ "res://.import/Moon.png-0ef8f22afa181951f3037595095b105c.stex" ]
-dest_md5="00e9072640a2b633c3c245e97f2358a7"
+dest_files=[ "res://.import/Mercury.png-a87cc7355b8f19c67aa75554872ed930.stex" ]
+dest_md5="8b3a801929a0b4e8f0958c9a448ee17c"
 
 [params]
 

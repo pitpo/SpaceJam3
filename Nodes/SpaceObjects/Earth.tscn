@@ -28,7 +28,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 radius = 1500.0
 
-[node name="StartingPlanet" type="KinematicBody2D" index="0" groups=[
+[node name="StartingPlanet" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
@@ -49,7 +49,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Atmo" type="Sprite" parent="Sprite" index="0"]
 
 show_behind_parent = true
-scale = Vector2( 1.60005, 1.60005 )
+scale = Vector2( 1.54766, 1.54766 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
