@@ -10,11 +10,11 @@ func _init():
 	
 func _ready():
 	# spawn next to a planet (earth? XD), orbitting around it
-	var pos = $"../StartingPlanet".position
+	var pos = $"../Sun/Earth/Moon".global_position
 	# adjust Y position to spawn at the top of the planet
-	pos.y -= $"../StartingPlanet/Sprite".texture.get_width() * $"../StartingPlanet".scale.y / 2
+	pos.y -= $"../Sun/Earth/Moon/Sprite".texture.get_width() * $"../Sun/Earth/Moon".scale.y / 2
 	pos.y -= 100
-	position = pos
+	global_position = pos
 	
 	velocity.x = 1
 	velocity.y = 0
@@ -60,7 +60,7 @@ func _process(delta):
 	$Camera2D.zoom = Vector2(curScale, curScale)
 
 func gravitate(object):
-	var dist = object.position - position
+	var dist = object.global_position - global_position
 	# no idea what is going on down there but it works
 	if (dist.length() < 3000):
 		var gravity = dist.normalized() * (object.get_node("CollisionShape2D").shape.radius * object.scale.x * 3 / dist.length())

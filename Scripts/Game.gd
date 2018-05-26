@@ -12,7 +12,7 @@ func _ready():
 		cloud.z_index = rand_range(-100, 0)
 		$Clouds.add_child(cloud)
 	
-	generate_belt(5000)
+	generate_belt(88000)
 
 func _process(delta):
 	background.modulate.r = min(start_color.r + Util.player.position.length() / 10000, 1)
@@ -21,7 +21,7 @@ func _process(delta):
 	$Clouds.modulate = background.modulate
 
 func generate_belt(distance):
-	for i in range(500):
+	for i in range(2000):
 		var trash = preload("res://Nodes/SpaceObjects/SmallTrash.tscn").instance()
 		add_child(trash)
 		var angle = randf() * PI * 2

@@ -1,20 +1,34 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Background/Background.png" type="Texture" id=2]
-[ext_resource path="res://Nodes/SpaceObjects/MediumTrash.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Nodes/SpaceObjects/Satellite1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Nodes/SpaceObjects/Uranus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Nodes/SpaceObjects/Mars.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/SpaceObjects/SmallTrash.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Background/Background.png" type="Texture" id=5]
+[ext_resource path="res://Nodes/SpaceObjects/Sun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nodes/SpaceObjects/Earth.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodes/SpaceObjects/Moon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Nodes/SpaceObjects/Venus.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Nodes/SpaceObjects/Mercury.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D" index="0"]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
-position = Vector2( -3906.59, 710.456 )
+[node name="Mars" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+position = Vector2( 79068, 507.291 )
+rotate = 0
 
-editor/display_folded = true
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="Trash" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 683.416, 335.031 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
+
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -32,28 +46,46 @@ _sections_unfolded = [ "Scroll" ]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 3840, 2160 )
+motion_mirroring = Vector2( 38400, 38400 )
 _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-texture = ExtResource( 2 )
+modulate = Color( 0.466667, 0.443137, 0.886275, 1 )
+texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 3840, 2160 )
-_sections_unfolded = [ "Region", "Transform" ]
+region_rect = Rect2( 0, 0, 38400, 38400 )
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="MediumTrash" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Clouds" type="Node2D" parent="." index="4"]
 
-position = Vector2( -1388.71, 1155.86 )
-_sections_unfolded = [ "Collision", "Transform" ]
-mass = 100
+[node name="Sun" parent="." index="5" instance=ExtResource( 6 )]
 
-[node name="Satellite1" parent="." index="3" instance=ExtResource( 4 )]
+rotate = 0.001
 
-position = Vector2( 1733.3, -578.095 )
+[node name="Earth" parent="Sun" index="2" instance=ExtResource( 7 )]
 
-[node name="StartingPlanet" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 62501.1, 55.7031 )
+rotate = 0.05
 
-position = Vector2( 5919.33, 1083.85 )
+[node name="Moon" parent="Sun/Earth" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 185.445, -5685.3 )
+rotate = 0
+
+[node name="Venus" parent="." index="6" instance=ExtResource( 9 )]
+
+position = Vector2( 47758.8, 356.66 )
+rotate = 0
+
+[node name="Mercury" parent="." index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 32086.7, -62.1201 )
+rotate = 0
+
+[node name="StartingPlanet" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 88478, 439.596 )
+rotate = 0
 
 

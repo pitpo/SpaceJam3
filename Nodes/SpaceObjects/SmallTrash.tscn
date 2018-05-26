@@ -55,7 +55,7 @@ custom_solver_bias = 0.0
 radius = 14.9067
 height = 24.7577
 
-[node name="SmallTrash" type="KinematicBody2D" index="0" groups=[
+[node name="SmallTrash" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
@@ -66,6 +66,8 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 mass = 70
+wait = 10
+rotate = 0
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -79,5 +81,15 @@ position = Vector2( 0.73468, 3.67183 )
 rotation = 1.5708
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+pause_animations = true
+freeze_bodies = true
+pause_particles = true
+pause_animated_sprites = true
+process_parent = true
+physics_process_parent = true
 
 

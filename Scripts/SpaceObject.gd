@@ -2,10 +2,10 @@ extends KinematicBody2D
 
 export var mass = 1
 export var wait = 10
+export(float) var rotate = 0
 
 var merged = false
 var motion = Vector2()
-var rotate
 var hugPlayer = false
 
 
@@ -25,12 +25,13 @@ func _ready():
 	arrow.add_child(indicator)
 	indicator.position.x -= 4
 	indicator.raise()
-	if randi() % 101 < 100:
-		rotate = randf() - randf()
-	else:
-		rotate = 1 # YOU SPIN ME ROUND
+	if rotate == 0:
+		if randi() % 101 < 100:
+			rotate = randf() - randf()
+		else:
+			rotate = 1 # YOU SPIN ME ROUND
 	
-	mass = gets($Sprite).get_width() * gets($Sprite).get_height()
+	mass = gets($Sprite).get_width() * gets($Sprite).get_height() * $Sprite.scale.x
 	if wait > 0: arrow.visible = false
 
 func gets(sprite):
@@ -57,9 +58,9 @@ func _process(delta):
 		rotation_degrees += rotate
 		
 		if Util.player.mass > mass:
-			var gravity = (Util.player.position - position).normalized()
+			var gravity = (Util.player.global_position - global_position).normalized()
 			
-			var movementSpeed = (Util.player.mass - mass) / (Util.player.position - position).length() * 10
+			var movementSpeed = (Util.player.mass - mass) / (Util.player.global_position - global_position).length() * 10
 			if movementSpeed > 100:
 				movementSpeed = 100
 			var collision = move_and_collide(gravity * movementSpeed * delta)
