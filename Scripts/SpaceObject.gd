@@ -4,11 +4,24 @@ export var mass = 1
 var merged = false
 var motion = Vector2()
 
+onready var arrows = Util.player.get_node("Camera2D/CanvasLayer/Arrows")
+onready var camera = Util.player.get_node("Camera2D")
+var arrow
+
 func _ready():
-	pass
+	arrow = preload("res://Nodes/Arrow.tscn").instance()
+	arrow.position = Vector2(200, 200)
+	arrows.add_child(arrow)
 
 func _process(delta):
 	if !merged:
+		arrow.position.x = min(max(arrow.texture.get_width()/2, (global_position - camera.get_camera_screen_center()).x + 960), 1920 - arrow.texture.get_width()/2)
+		arrow.position.y = min(max(arrow.texture.get_height()/2, (global_position - camera.get_camera_screen_center()).y + 540), 1080 - arrow.texture.get_height()/2)
+		
+		var dist = (global_position - (camera.get_camera_screen_center() + arrow.position - Vector2(960, 540)))
+		arrow.rotation = dist.angle()
+		arrow.visible = (abs(dist.y) >= arrow.texture.get_height()/3 or abs(dist.x) >= arrow.texture.get_width()/3)
+		
 		if Util.player.mass > mass:
 			var gravity = (Util.player.position - position).normalized()
 			motion += gravity
@@ -22,6 +35,8 @@ func _process(delta):
 		
 		else:
 			Util.player.gravitate(self)
+	else:
+		arrow.visible = false
 
 func add_object(object):
 	var gp = object.global_position
