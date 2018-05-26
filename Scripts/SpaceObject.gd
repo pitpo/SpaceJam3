@@ -14,6 +14,8 @@ onready var camera = Util.player.get_node("Camera2D")
 var arrow
 
 func _ready():
+	if !is_in_group("planet"): return
+	
 	arrow = preload("res://Nodes/Arrow.tscn").instance()
 	arrow.position = Vector2(200, 200)
 	arrows.add_child(arrow)
