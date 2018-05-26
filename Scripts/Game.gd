@@ -75,10 +75,15 @@ func _on_SpawnTimer_timeout():
 			xPos = rand_range(spawnArea.topLeft.x, spawnArea.topRight.x)
 		var type = randi() % 100
 		var trash
-		if type < 90:
+		if type < 80:
 			trash = SmallTrash.instance()
 			var sc = 0.5 + randf()*2
 			trash.scale = Vector2(sc, sc)
+		elif type < 81:
+			trash = load("res://Nodes/Cloud.tscn").instance()
+			trash.z_index = rand_range(-100, 0)
+			trash.position = Vector2(xPos, yPos)
+			$Clouds.add_child(trash)
 		elif type < 98:
 			trash = MediumTrash.instance()
 			var sc = 0.5 + randf()*2
