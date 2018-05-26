@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/SpaceObject.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpaceObjects/Satelita01.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Satellite.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -20,6 +21,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 mass = 150
+wait = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -31,5 +33,9 @@ texture = ExtResource( 2 )
 rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="AI" type="Node" parent="." index="2"]
+
+script = ExtResource( 3 )
 
 
