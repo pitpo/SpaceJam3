@@ -12,6 +12,7 @@ config_version=3
 
 config/name="SpacjeJam3"
 run/main_scene="res://Scenes/Game.tscn"
+boot_splash/image="res://Splash.png"
 config/icon="res://icon.png"
 
 [autoload]

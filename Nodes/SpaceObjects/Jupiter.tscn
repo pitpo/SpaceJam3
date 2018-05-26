@@ -20,6 +20,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 mass = 1
 wait = 10
+rotate = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

@@ -1,6 +1,6 @@
-extends AnimatedSprite
+extends Sprite
 
-var sprites = self.frames.animations
+export(String) var set
 
 func _ready():
-	animation = sprites[randi() % sprites.size()]["name"]
+	texture = Util.textures[set][randi() % Util.textures[set].size()]
