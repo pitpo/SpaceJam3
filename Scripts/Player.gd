@@ -36,7 +36,7 @@ func _process(delta):
 	velocity = velocity.normalized() * speed
 	move_and_collide(velocity * delta)
 	var recentNodes = get_tree().get_nodes_in_group("player")
-	print(recentNodes.size())
+#	print(recentNodes.size())
 	if recentNodes.size() < 22:
 		for i in range(1, recentNodes.size()):
 			recentNodes[i].hug_player()

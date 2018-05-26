@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.png-35d93eb57723ae0fb58ad0b59abe54b6.stex"
+path="res://.import/SpaceCloud03.png-4e3c36da2669169695142219ee9ebee0.stex"
 
 [deps]
 
-source_file="res://Sprites/Background.png"
-source_md5="be9c582d8982e560f6461fbff89fa7c1"
+source_file="res://Sprites/Background/SpaceCloud03.png"
+source_md5="2d3ded4e733e87b543304a254f8d6fa4"
 
-dest_files=[ "res://.import/Background.png-35d93eb57723ae0fb58ad0b59abe54b6.stex" ]
-dest_md5="7729ad7daed62fb41739c01c15fd247a"
+dest_files=[ "res://.import/SpaceCloud03.png-4e3c36da2669169695142219ee9ebee0.stex" ]
+dest_md5="3cd3e2b70a1fac20da425dc77f551d8b"
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

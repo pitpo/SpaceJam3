@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/PlayerCore.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/PlayerLight.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/CommetLight.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -46,6 +46,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.705882 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 0.705882 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Light:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.85, 0.85 ), Vector2( 1, 1 ) ]
 }
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
@@ -100,12 +124,11 @@ _sections_unfolded = [ "Rect", "Visibility", "Z Index" ]
 [node name="Tail" type="Sprite" parent="." index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-z_index = 5
 texture = ExtResource( 2 )
 flip_h = true
 vframes = 17
 hframes = 2
-_sections_unfolded = [ "Animation", "Offset", "Transform", "Z Index" ]
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
@@ -144,11 +167,11 @@ _sections_unfolded = [ "Playback Options" ]
 
 position = Vector2( 43.5619, -2.70927 )
 scale = Vector2( 0.15, 0.15 )
-z_index = 6
+z_index = 1
 texture = ExtResource( 3 )
 vframes = 4
 hframes = 3
-frame = 7
+frame = 11
 _sections_unfolded = [ "Animation", "Transform", "Z Index" ]
 
 [node name="CoreAnimation" type="AnimationPlayer" parent="." index="6"]
@@ -162,10 +185,12 @@ anims/CoreAnim = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
+[node name="Light" type="Sprite" parent="." index="7"]
 
-modulate = Color( 1, 1, 1, 0.501961 )
+modulate = Color( 1, 1, 1, 0.705882 )
+show_behind_parent = true
+position = Vector2( 36.5756, -2.43837 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 

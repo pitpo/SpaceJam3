@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 26.187
 height = 116.298
 
-[node name="Satellite1" type="KinematicBody2D" index="0" groups=[
+[node name="Satellite1" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
