@@ -7,10 +7,10 @@ path="res://.import/TransitionMediumRock01.png-42e094c3a4bcd2e0befa60ea347b316c.
 [deps]
 
 source_file="res://Sprites/SpaceObjects/TransitionMediumRock01.png"
-source_md5="80e7d54e4b828eec4294437eb557515c"
+source_md5="edad155d42b8f1ae74f884af255cea03"
 
 dest_files=[ "res://.import/TransitionMediumRock01.png-42e094c3a4bcd2e0befa60ea347b316c.stex" ]
-dest_md5="31b0346b1487859cd3a299cf6e25362d"
+dest_md5="f921b12eaadf82318929b54ee7f9020f"
 
 [params]
 

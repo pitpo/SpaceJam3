@@ -7,10 +7,10 @@ path="res://.import/SmallRock01.png-b024e146cee87c8a746e061200710cc6.stex"
 [deps]
 
 source_file="res://Sprites/SpaceObjects/SmallRock01.png"
-source_md5="d742a718b5b0d1f89a3d3db52136298a"
+source_md5="a64db420a0885d46db8e098b29461371"
 
 dest_files=[ "res://.import/SmallRock01.png-b024e146cee87c8a746e061200710cc6.stex" ]
-dest_md5="7bf74ffbdfbb83846da2fdb949c46114"
+dest_md5="be44e15b2fe7c4af1876de63fdf15df4"
 
 [params]
 

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var mass = 100
+var mass = 4000
 var speed = 400
 var velocity = Vector2()
 
@@ -34,7 +34,10 @@ func _process(delta):
 	
 	rotation = velocity.normalized().angle()
 	velocity = velocity.normalized() * speed
-	move_and_collide(velocity * delta)
+	var collision = move_and_collide(velocity * delta)
+	if collision && collision.collider.mass > mass:
+		velocity = velocity.slide(collision.normal)
+	
 	var recentNodes = get_tree().get_nodes_in_group("player")
 #	print(recentNodes.size())
 	if recentNodes.size() < 22:

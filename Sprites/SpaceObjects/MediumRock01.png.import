@@ -7,10 +7,10 @@ path="res://.import/MediumRock01.png-a9e0c96e3d7f4a08a03c9143e2d0fd75.stex"
 [deps]
 
 source_file="res://Sprites/SpaceObjects/MediumRock01.png"
-source_md5="cea69b2b389c95faa59df3e3165ffaee"
+source_md5="1bc3f46705ccdd408dc9b034fd2c41a6"
 
 dest_files=[ "res://.import/MediumRock01.png-a9e0c96e3d7f4a08a03c9143e2d0fd75.stex" ]
-dest_md5="298b024b6ab6e7e14c065d9b526cd207"
+dest_md5="fb5ca78d009b352c4e14a64c2e8a77ab"
 
 [params]
 

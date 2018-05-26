@@ -25,6 +25,7 @@ func _ready():
 		rotate = randf() - randf()
 	else:
 		rotate = 1 # YOU SPIN ME ROUND
+	mass = gets($Sprite).get_width() * gets($Sprite).get_height()
 
 func gets(sprite):
 	if sprite.get_class() == "Sprite":
@@ -46,9 +47,9 @@ func _process(delta):
 		if Util.player.mass > mass:
 			var gravity = (Util.player.position - position).normalized()
 			
-			var movementSpeed = (Util.player.mass - mass) / (Util.player.position - position).length() * 50
-			if movementSpeed > 200:
-				movementSpeed = 200
+			var movementSpeed = (Util.player.mass - mass) / (Util.player.position - position).length() * 10
+			if movementSpeed > 100:
+				movementSpeed = 100
 			var collision = move_and_collide(gravity * movementSpeed * delta)
 			
 			if collision and collision.collider.is_in_group("player"):
