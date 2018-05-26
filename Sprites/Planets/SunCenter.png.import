@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SunCenter.png-2cf843fe298e421ee9b11a092f60dec9.stex"
+path="res://.import/SunCenter.png-d59ca7d57b8479535173b58bba5c28ca.stex"
 
 [deps]
 
-source_file="res://Sprites/Background/SunCenter.png"
+source_file="res://Sprites/Planets/SunCenter.png"
 source_md5="f8c0aa23e74a477a26b753aa8d822023"
 
-dest_files=[ "res://.import/SunCenter.png-2cf843fe298e421ee9b11a092f60dec9.stex" ]
+dest_files=[ "res://.import/SunCenter.png-d59ca7d57b8479535173b58bba5c28ca.stex" ]
 dest_md5="4691d616f6592aa97d452ccfefbbcb19"
 
 [params]

@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SunLight.png-f0c56e3b015a25df65529a3e5c69e7fb.stex"
+path="res://.import/SunLight.png-76c0d32e51935bb66f2dacc98d6dd53d.stex"
 
 [deps]
 
-source_file="res://Sprites/Background/SunLight.png"
+source_file="res://Sprites/Planets/SunLight.png"
 source_md5="69f1c7457989f713e4b76a0bfc672ddc"
 
-dest_files=[ "res://.import/SunLight.png-f0c56e3b015a25df65529a3e5c69e7fb.stex" ]
+dest_files=[ "res://.import/SunLight.png-76c0d32e51935bb66f2dacc98d6dd53d.stex" ]
 dest_md5="a093bf972947bf24279caf2080141c86"
 
 [params]
