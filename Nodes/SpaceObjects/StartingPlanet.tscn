@@ -8,17 +8,19 @@
 custom_solver_bias = 0.0
 radius = 671.646
 
-[node name="StartingPlanet" type="KinematicBody2D" index="0" groups=[
+[node name="StartingPlanet" type="KinematicBody2D" groups=[
 "space_object",
 ]]
 
+z_index = -1
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 5
+collision_mask = 5
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 mass = 1
+wait = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

@@ -97,4 +97,4 @@ func hug_player():
 	var vec = (Util.player.get_node("Core").global_position - global_position).normalized()
 	vec.x += randf() - randf()
 	vec.y += randf() - randf()
-	move_and_slide(vec*50)
+	move_and_slide(vec*150)

@@ -3,7 +3,7 @@ extends KinematicBody2D
 var mass = 4000
 var speed = 400
 var velocity = Vector2()
-var camScale
+var camScale = 0
 
 func _init():
 	Util.player = self
@@ -22,16 +22,16 @@ func _ready():
 func _process(delta):
 	# player can slightly manipulate the movement vector
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += 2
+		velocity.x += 2 * camScale
 	
 	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 2
+		velocity.x -= 2 * camScale
 	
 	if Input.is_action_pressed("ui_down"):
-		velocity.y += 2
+		velocity.y += 2 * camScale
 	
 	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 2
+		velocity.y -= 2 * camScale
 	
 	rotation = velocity.normalized().angle()
 	velocity = velocity.normalized() * speed
@@ -40,15 +40,18 @@ func _process(delta):
 		velocity = velocity.slide(collision.normal)
 	
 	var recentNodes = get_tree().get_nodes_in_group("player")
-#	print(recentNodes.size())
-	if recentNodes.size() < 22:
+	var nodeBuffer = log(mass) * 10
+	if recentNodes.size() < nodeBuffer:
 		for i in range(1, recentNodes.size()):
 			recentNodes[i].hug_player()
 	else:
-		for i in range(recentNodes.size() - 21, recentNodes.size()):
+		for i in range(recentNodes.size() - nodeBuffer + 1, recentNodes.size()):
 			recentNodes[i].hug_player()
 	
-	camScale = log(log(mass/1024.0))
+	if camScale < 2:
+		camScale = log(log(mass/1024))
+	else:
+		camScale = log(mass)/2
 	if camScale < 1:
 		camScale = 1
 	
