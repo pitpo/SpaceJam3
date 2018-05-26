@@ -7,10 +7,10 @@ path="res://.import/TransitionSmallRock01.png-04282dbebe50874c8d097e3281a1132c.s
 [deps]
 
 source_file="res://Sprites/SpaceObjects/TransitionSmallRock01.png"
-source_md5="652c86f25ed25283ed97152f69f47faf"
+source_md5="438af88f77e7d69c8f5a2b6aa9a90450"
 
 dest_files=[ "res://.import/TransitionSmallRock01.png-04282dbebe50874c8d097e3281a1132c.stex" ]
-dest_md5="01e48c634c742f840e50500a372905af"
+dest_md5="3547350e3db940cfa129e7e6847d704c"
 
 [params]
 
