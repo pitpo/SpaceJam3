@@ -76,6 +76,7 @@ func _process(delta):
 
 func add_object(object):
 	var gp = object.global_position
+	var gr = object.global_rotation
 	object.merged = true
 	
 	object.get_parent().remove_child(object)
@@ -85,6 +86,7 @@ func add_object(object):
 	object.add_to_group("player")
 	
 	object.global_position = gp
+	object.global_rotation = gr
 	Util.player.mass += mass
 	
 	hugPlayer = true
