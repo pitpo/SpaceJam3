@@ -7,10 +7,10 @@ path="res://.import/ArrowShade.png-5bcec006292516a0cc50bd39d1ffdbcd.stex"
 [deps]
 
 source_file="res://Sprites/ArrowShade.png"
-source_md5="0d1e1aa5d095e3221c4de330512f9470"
+source_md5="54f1e6fa60767a4a62bee54e8cbcb454"
 
 dest_files=[ "res://.import/ArrowShade.png-5bcec006292516a0cc50bd39d1ffdbcd.stex" ]
-dest_md5="3c8c86eb08df5c2eaa77f96bc834c2c2"
+dest_md5="484616ece6ce7106679f8cae0d2f7e80"
 
 [params]
 

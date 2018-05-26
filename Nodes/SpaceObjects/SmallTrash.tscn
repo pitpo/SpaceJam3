@@ -3,10 +3,10 @@
 [ext_resource path="res://Scripts/SpaceObject.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpaceObjects/AsteroidSmallRock02.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/SpaceObjects/SmallRock03.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/SpaceObjects/SmallRock02.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/SpaceObjects/AsteroidSmallRock01.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/SpaceObjects/TransitionSmallRock02.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/SpaceObjects/TransitionSmallRock01.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SpaceObjects/TransitionSmallRock02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/SpaceObjects/SmallRock02.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/SpaceObjects/TransitionSmallRock01.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/SpaceObjects/AsteroidSmallRock01.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SpaceObjects/SmallRock01.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/SpriteSelector.gd" type="Script" id=9]
 
@@ -25,22 +25,22 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "rock4",
+"name": "rock7",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "rock1",
+"name": "rock4",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "rock7",
+"name": "rock6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "rock6",
+"name": "rock1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -55,7 +55,7 @@ custom_solver_bias = 0.0
 radius = 14.9067
 height = 24.7577
 
-[node name="SmallTrash" type="KinematicBody2D" groups=[
+[node name="SmallTrash" type="KinematicBody2D" index="0" groups=[
 "space_object",
 ]]
 
@@ -67,7 +67,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 mass = 70
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "rock7"

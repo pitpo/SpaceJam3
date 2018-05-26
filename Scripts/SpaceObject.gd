@@ -12,6 +12,20 @@ func _ready():
 	arrow = preload("res://Nodes/Arrow.tscn").instance()
 	arrow.position = Vector2(200, 200)
 	arrows.add_child(arrow)
+	
+	var indicator = $Sprite.duplicate(DUPLICATE_USE_INSTANCING)
+	var sc = min(1, arrow.texture.get_width() * 0.5 / float(gets($Sprite).get_width()))
+	indicator.scale = Vector2(sc, sc)
+#	indicator.show_behind_parent = true
+	arrow.add_child(indicator)
+	indicator.position.x -= 4
+	indicator.raise()
+
+func gets(sprite):
+	if sprite.get_class() == "Sprite":
+		return sprite.texture
+	else:
+		return sprite.frames.get_frame(sprite.animation, sprite.frame)
 
 func _process(delta):
 	if !merged:

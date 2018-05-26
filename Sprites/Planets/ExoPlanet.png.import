@@ -7,10 +7,10 @@ path="res://.import/ExoPlanet.png-bdf9537d0ee92aec275ce31756d27fd7.stex"
 [deps]
 
 source_file="res://Sprites/Planets/ExoPlanet.png"
-source_md5="769a39ac889658b7d3b2b58a69d14ba3"
+source_md5="e97a74f2a65ec1ef7e6838f5ab568470"
 
 dest_files=[ "res://.import/ExoPlanet.png-bdf9537d0ee92aec275ce31756d27fd7.stex" ]
-dest_md5="2d9be3c3de6b5120d4776c1c71b6f144"
+dest_md5="3f5da4ae42edf191a6848a55f53b2103"
 
 [params]
 

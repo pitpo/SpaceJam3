@@ -4,7 +4,7 @@ onready var background = $ParallaxBackground/ParallaxLayer/Background
 onready var start_color = background.modulate
 
 func _ready():
-	pass
+	randomize()
 
 func _process(delta):
 	background.modulate.r = min(start_color.r + Util.player.position.length() / 10000, 1)
